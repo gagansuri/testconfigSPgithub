@@ -41,7 +41,7 @@ resource "oci_identity_compartment" "functions_compartment" {
 resource "oci_nosql_table" "database" {
     compartment_id = oci_identity_compartment.database_compartment.id
     name = "database"
-    ddl_statement = "CREATE TABLE enviro (id INTEGER GENERATED ALWAYS AS IDENTITY, createdAt AS TIMESTAMP, heading AS FLOAT, accelerometer AS STRING, temperature AS FLOAT, pressure AS FLOAT, rgb AS STRING, lux AS INTEGER, KEY (id));"
+    ddl_statement = "CREATE TABLE enviro (id INTEGER GENERATED ALWAYS AS IDENTITY, createdAt  TIMESTAMP, heading  FLOAT, accelerometer  STRING, temperature  FLOAT, pressure AS FLOAT, rgb AS STRING, lux AS INTEGER, KEY (id));"
     table_limits {
         max_read_units = "25"
         max_write_units = "25"
